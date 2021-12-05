@@ -11,11 +11,11 @@
         data-repo-id={{ .Site.Params.giscus.repo_id }}
         data-category={{ .Site.Params.giscus.category }}
         data-category-id={{ .Site.Params.giscus.category_id }}
-        data-mapping={{ .Site.Params.giscus.mapping }}
-        data-reactions-enabled={{ .Site.Params.giscus.reactions_enabled | default 0}}
-        data-emit-metadata={{ .Site.Params.giscus.emit_metadata | default 0 }}
-        data-theme={{ .Site.Params.giscus.theme }}
-        data-lang={{ .Site.Params.giscus.lang }}
+        data-mapping={{ .Site.Params.giscus.mapping | default "pathname" }}
+        data-reactions-enabled={{ .Site.Params.giscus.reactions_enabled | default "0" }}
+        data-emit-metadata={{ .Site.Params.giscus.emit_metadata | default "0" }}
+        data-theme={{ .Site.Params.giscus.theme | default "light" }}
+        data-lang={{ .Site.Params.giscus.lang | default "en" }}
         crossorigin="anonymous"
         async>
     </script>
