@@ -18,7 +18,14 @@ DefaultContentLanguage           = "en"                    # Default language fo
     email                        = "youremail@email.com"   # E-mail address for contact section
     # customCSS                  = ["foo.css"]             # Include custom css files placed under assets/
     # customJS                   = ["foo.js"]              # Include custom JavaScript files placed under assets/
-
+    
+    
+    # Possibility to enable Matomo analytics
+    # https://matomo.org/
+    [params.matomo]
+        url = "yoursite.matomo.cloud" # Matomo cloud url
+        id  = "1"                     # Matomo site id
+        
     # Configure the home page
     [params.home]
         introHeight              = "fullheight"            # Input either "medium" or "large" or "fullheight"
