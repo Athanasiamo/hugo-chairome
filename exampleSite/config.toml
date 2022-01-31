@@ -20,11 +20,19 @@ DefaultContentLanguage           = "en"                    # Default language fo
     # customJS                   = ["foo.js"]              # Include custom JavaScript files placed under assets/
     
     
+    [params.analytics]
+    
+    # Add Plausible analytics
+    # https://plausible.io/
+    [params.analytics.plausible]
+        domain = "yourdomain.com"    # your domain
+        
     # Possibility to enable Matomo analytics
     # https://matomo.org/
-    [params.matomo]
+    [params.analytics.matomo]
         url = "yoursite.matomo.cloud" # Matomo cloud url
         id  = "1"                     # Matomo site id
+        
         
     # Configure the home page
     [params.home]
