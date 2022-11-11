@@ -1,6 +1,6 @@
 <div class="social-icons">
     {{ range .Site.Params.social }}
-    <a href="{{ .url }}" {{ .html_attributes | safeHTMLAttr }}>
+    <a href="{{ .url }}" {{ .html_attributes | safeHTMLAttr }} target="_blank" rel="me noopener">
         <i class="{{ .icon_pack}} fab fa-{{ .icon}}"></i>
     </a>
     {{ end }}
