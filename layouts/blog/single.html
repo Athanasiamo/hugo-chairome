@@ -4,6 +4,7 @@
 {{ end }}
 {{ end }}
 
+
 {{ define "main" }}
 <div class="container">
     <h2 class="title is-1 top-pad strong-post-title">
@@ -46,7 +47,7 @@
       {{ with $.Site.GetPage $taxonomy_term }}
       {{ $len := (len $taxonomy) }}
      <p>
-         {{ $taxonomy_term | title }}: 
+         {{ $taxonomy_term | title }}:
           {{ range $key, $value := $taxonomy }}
            <a href="{{ (printf "/%s/" $taxonomy_term) | relLangURL }}{{ . | urlize }}">
              {{ $value }}</a>{{ if ne (add $key 1) $len }},{{ end }}
@@ -54,11 +55,18 @@
         </p>
       {{ end }}
     {{ end }}
+
+    {{ if and (gt .WordCount 400 ) (.Params.toc) }}
+      <aside>
+          <h1>Contents</h1>
+          {{ .TableOfContents }}
+      </aside>
+    {{ end }}
 </div>
 <!-- Begin blog post content -->
 <div class="container markdown top-pad">
     {{ .Content }}
-    
+
     {{ if (.Site.Params.blog.citation | default true) }}
     <h3>Citation</h3>
     <div class="columns">
@@ -79,7 +87,7 @@
             &emsp;title = { {{ .Title }} },<br>
             &emsp;url = { {{ .Permalink }} },<br>
             &emsp;year = { {{ .Date.Format "2006" }} }<br>
-            &emsp;updated = { {{ .Lastmod.Format .Site.Params.dateFormat }} }<br> 
+            &emsp;updated = { {{ .Lastmod.Format .Site.Params.dateFormat }} }<br>
             }
           </p>
         </div>
